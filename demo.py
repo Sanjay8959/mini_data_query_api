@@ -1,11 +1,14 @@
 import requests
 import json
+import sys
 
-BASE_URL = 'http://localhost:5000'
+# Use command line argument for BASE_URL or default to localhost
+BASE_URL = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:5000'
 
 def demo_api():
     """Demonstrate the Mini Data Query Simulation Engine API with clear examples"""
-    print("=== Mini Data Query Simulation Engine API Demo ===")
+    print(f"=== Mini Data Query Simulation Engine API Demo ===")
+    print(f"Using API at: {BASE_URL}")
     
     # Step 1: Get authentication token
     print("\n1. Getting authentication token...")
