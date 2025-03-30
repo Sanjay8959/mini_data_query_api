@@ -2,8 +2,8 @@ import requests
 import json
 import sys
 
-# Use command line argument for BASE_URL or default to localhost
-BASE_URL = sys.argv[1] if len(sys.argv) > 1 else 'http://localhost:5000'
+# Use command line argument for BASE_URL or default to your Render URL
+BASE_URL = sys.argv[1] if len(sys.argv) > 1 else 'https://mini-data-query-api.onrender.com'
 
 def demo_api():
     """Demonstrate the Mini Data Query Simulation Engine API with clear examples"""

@@ -7,7 +7,10 @@ from flask_jwt_extended import JWTManager
 import os
 
 def create_app():
-    app = Flask(__name__)
+    # Create Flask app with explicit template folder path
+    app = Flask(__name__, 
+                template_folder=os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'templates')),
+                static_folder=os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'static')))
     
     # Configure app
     app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key')
