@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Data Query Simulation Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mini Data Query Simulation Engine</h1>
+            <p>Ask questions about your data in natural language</p>
+        </header>
+
+        <div class="auth-section" id="auth-section">
+            <h2>Authentication</h2>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username" value="admin">
+                <input type="password" id="password" placeholder="Password" value="password">
+                <button id="login-btn">Login</button>
+            </div>
+            <div class="auth-status" id="auth-status"></div>
+        </div>
+
+        <div class="query-section" id="query-section" style="display: none;">
+            <h2>Query Your Data</h2>
+            <div class="form-group">
+                <input type="text" id="query-input" placeholder="Enter your query in natural language...">
+                <button id="query-btn">Submit Query</button>
+            </div>
+            <div class="example-queries">
+                <p>Example queries:</p>
+                <ul>
+                    <li><a href="#" class="example-query">What is the most expensive product in the store?</a></li>
+                    <li><a href="#" class="example-query">What is the cheapest item in the Clothing category?</a></li>
+                    <li><a href="#" class="example-query">How many products are in the Electronics category?</a></li>
+                    <li><a href="#" class="example-query">What is the average price of all products?</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="results-section" id="results-section" style="display: none;">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="query-results">Results</button>
+                <button class="tab-btn" data-tab="query-explanation">Explanation</button>
+                <button class="tab-btn" data-tab="query-validation">Validation</button>
+                <button class="tab-btn" data-tab="query-sql">SQL</button>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-pane active" id="query-results">
+                    <h3>Query Results</h3>
+                    <div class="results-container" id="results-container"></div>
+                </div>
+                <div class="tab-pane" id="query-explanation">
+                    <h3>Query Explanation</h3>
+                    <div class="explanation-container" id="explanation-container"></div>
+                </div>
+                <div class="tab-pane" id="query-validation">
+                    <h3>Query Validation</h3>
+                    <div class="validation-container" id="validation-container"></div>
+                </div>
+                <div class="tab-pane" id="query-sql">
+                    <h3>Generated SQL</h3>
+                    <div class="sql-container" id="sql-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
