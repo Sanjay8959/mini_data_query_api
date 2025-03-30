@@ -1,7 +1,12 @@
 import requests
 import json
+import sys
 
+# Set default BASE_URL, but allow it to be overridden by command-line argument
 BASE_URL = 'http://localhost:5000'
+if len(sys.argv) > 1:
+    BASE_URL = sys.argv[1]
+    print(f"Using API endpoint: {BASE_URL}")
 
 def test_api():
     """Test the Mini Data Query Simulation Engine API"""
